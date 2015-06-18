@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<!--
+
+
+	Requirements:
+	localhost/foldername/roll_number -> to view the profile picture of that roll number
+	php5-curl
+-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html">
+	<meta name="author" content="Suhith Rajesh">
+	<meta name="description" content="Delta Web Development Induction Task 4">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+	<title>Task 4</title>
+
+	<script src="client.js" type="text/javascript">
+	</script>
+	<script src='https://www.google.com/recaptcha/api.js' async defer></script>
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+	<div class="title">
+		Registration Form:
+	</div>
+
+	<div class="container">
+		<form id="parent_form" method="POST" action="insert.php" accept-charset="UTF-8" enctype="multipart/form-data">
+		<div class="field">
+			Roll No.:
+			<br>
+			<input type="text" name="rollno" inputmode="numeric" size="10" required autofocus>
+		</div>
+		<br>
+		<div class="field">
+			Name:
+			<br>
+			<input type="text" name="name" autocomplete="name" placeholder="First Middle Last" required>
+		</div>
+		<br>
+		<div class="field">
+			Department:
+			<br>
+			<select name="dept" form="parent_form" required>
+				<option value="Computer Science and Engineering">Computer Science and Engineering</option>
+				<option value="Electronics and Communications Engineering">Electronics and Communications Engineering</option>
+				<option value="Electronics and Electrical Engineering">Electronics and Electrical Engineering</option>
+				<option value="Mechanical Engineering">Mechanical Engineering</option>
+				<option value="Production Engineering">Production Engineering</option>
+				<option value="Civil Engineering">Civil Engineering</option>
+				<option value="Chemical Engineering">Chemical Engineering</option>
+				<option value="Metallurgy and Materials Engineering">Metallurgy and Materials Engineering</option>
+				<option value="Architecture">Architecture</option>
+			</select>
+		</div>
+		<br>
+		<div class="field">
+			Year of Study:
+			<br>
+			<select name="year" form="parent_form" required>
+				<option value="First">First</option>
+				<option value="Second">Second</option>
+				<option value="Third">Third</option>
+				<option value="Fourth">Fourth</option>
+			</select>
+		</div>
+		<br>
+		<div class="field">
+			Email:
+			<br>
+			<input name="email" placeholder="example@awesome.com" type="email" autocomplete="email" required>
+		</div>
+		<br>
+		<div class="field">
+			Password:
+			<br>
+			<input name="passwd" id="passwd" minlength="4" type="password" placeholder="Atleast 4 characters" required>
+			<br>
+			<input type="checkbox" id="cb" name="seetext" label="Show the password">Show Password
+		</div>
+		<br>
+		<div class="field">
+			Please select a profile picture to upload
+			<br>
+			(Max. Size is 500kb): <!-- Check the enctype for this stuff -->
+			<br>
+			<input type="file" name="profpic" required>
+		</div>
+		<br>
+		<div class="g-recaptcha" data-sitekey="6LeIYwgTAAAAAPnZu0uzZMcrxxWKa61hDigaxGI9"></div>
+		<br />
+			<input type="submit" value="Submit" id="sub" name="submit">
+		<br>
+		</form>
+	</div>
+</body>
+</html>
